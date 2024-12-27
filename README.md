@@ -19,4 +19,4 @@ Para se conectar usando pgAdmin pela URL acima utilize o acesso que está no arq
 
 ### O template do postman para os endpoints está na pasta resources
 
-### Após abrir o projeto com o a sua IDEA de preferência (Eclipse, Intellij, Spring Tools, Netbeans) basta rodar a aplicação API que ficará disponível na porta http://localhost:8787 conforme o arquivo application.properties do projeto.
+### Após abrir o projeto com o a sua IDEA de preferência (Eclipse, Intellij, Spring Tools, Netbeans) basta rodar a aplicação API que ficará disponível na porta http://localhost:8787 com a tela criada pelo vue.js que fica em /resources/static/.
