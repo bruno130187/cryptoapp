@@ -1,0 +1,33 @@
+version: "3"
+name: "cryptoapp"
+services:
+  mysql:
+    image: mysql:latest
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "MySql2022!"
+      MYSQL_DATABASE: "cryptoapp"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "MySql2022!"
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql-compose-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: "mysql"
+      MYSQL_ROOT_PASSWORD: "MySql2022!"
+      UPLOAD_LIMIT: "64M"
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    networks:
+      - mysql-compose-network
+
+networks:
+  mysql-compose-network:
+    driver: bridge
